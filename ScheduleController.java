@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.*;
 /*
 Dal scheduler provides a variety of options on hop to manage a schedule for Dalhousie University
