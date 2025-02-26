@@ -3,41 +3,46 @@ import java.util.*;
 Track Classes for each respective day of the school week
  */
 public class Schedule {
-    public LinkedList<Class> monday;
-    public LinkedList<Class> tuesday;
-    public LinkedList<Class> wednesday;
-    public LinkedList<Class> thursday;
-    public LinkedList<Class> friday;
+    public LinkedList<Class> monday = new LinkedList<>();
+    public LinkedList<Class> tuesday = new LinkedList<>();
+    public LinkedList<Class> wednesday = new LinkedList<>();
+    public LinkedList<Class> thursday = new LinkedList<>();
+    public LinkedList<Class> friday = new LinkedList<>();
 
     public Schedule(){
 
     }
 
     public void addSlots(){
+        //intialize
         Scanner scn = new Scanner(System.in);
         String day = "";
+
+        //track amount of slots being added in order to loop over adding them
         System.out.println("How many Timeslots do you want to add?");
         int slots = scn.nextInt();
         scn.nextLine();
+
+        //loop over adding slots, specify the day for the slot
         for (int a = 0; a < slots; a++ ){
             System.out.println("What day do you want to add a slot to? (Monday, Tuesday, Wednesday, etc...)");
             day = scn.nextLine();
             System.out.println("");
             switch (day) {
                 case "Monday":
-                    monday = createClass(monday);
+                    monday = createClass();
                     break;
                 case "Tuesday":
-                    tuesday = createClass(tuesday);
+                    tuesday = createClass();
                     break;
                 case "Wednesday":
-                    wednesday = createClass(wednesday);
+                    wednesday = createClass();
                     break;
                 case "Thursday":
-                    thursday = createClass(thursday);
+                    thursday = createClass();
                     break;
                 case "Friday":
-                    friday = createClass(friday);
+                    friday = createClass();
                     break;
                 default:
                     System.out.println("Not a valid day. Try again...");
@@ -49,7 +54,8 @@ public class Schedule {
     }
 
     //Retrieve class information and store info into the Class class and into each days respective Linked List
-    public LinkedList<Class> createClass(LinkedList<Class> classDays ){
+    public LinkedList<Class> createClass(){
+        LinkedList<Class> classDays = new LinkedList<>();
         Scanner scn = new Scanner(System.in);
         System.out.println("What is the class Name? Ex. CSCI-1234");
         String classNumb = scn.nextLine();
@@ -67,7 +73,50 @@ public class Schedule {
 
     //print the schedule for viewing
     public void printSched(){
-        System.out.printf("%-20s %-20s %-20s %-20s %-20s%n","Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
+        //print monday
+        System.out.print("Monday    | ");
+        if (!monday.isEmpty()){
+            for (Class curr : monday) {
+                System.out.print(curr.print() + " ");
+            }
+        }
+        System.out.println("");
+
+        //print tuesday
+        System.out.print("Tuesday   | ");
+        if (!tuesday.isEmpty()){
+            for (Class curr : tuesday) {
+                System.out.print(curr.print() + " ");
+            }
+        }
+        System.out.println("");
+
+        //print wednesday
+        System.out.print("Wednesday | ");
+        if (!wednesday.isEmpty()){
+            for (Class curr : wednesday) {
+                System.out.print(curr.print() + " ");
+            }
+        }
+        System.out.println("");
+
+        //print thursday
+        System.out.print("Thursday  | ");
+        if (!thursday.isEmpty()){
+            for (Class curr : thursday) {
+                System.out.print(curr.print() + " ");
+            }
+        }
+        System.out.println("");
+
+        //print friday
+        System.out.print("Friday    | ");
+        if (!friday.isEmpty()){
+            for (Class curr : friday) {
+                System.out.print(curr.print() + " ");
+            }
+        }
+        System.out.println("");
 
 
     }

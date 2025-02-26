@@ -35,4 +35,9 @@ public class Class {
     public String getClassNumb() {
         return classNumb;
     }
+
+    public String print(){
+        if (classNumb == null || classStart== null || classEnd == null || classType == null){ return "Class does not exist...";}
+        return "|| " + classNumb + " |" + classStart + "-" + classEnd + "| " + classType + " ||" ;
+    }
 }
