@@ -13,7 +13,7 @@ public class ScheduleController {
         //Start Program
         Scanner scn = new Scanner(System.in);
         System.out.println("Welcome to Dal Scheduler!");
-        System.out.println("Type 1 to create a new schedule, 2 to print the schedule,...");
+        System.out.println("Type 1 to create a new schedule, 2 to print the schedule and 0 to end");
         cmd = scn.nextLine();
 
         Schedule schedule = new Schedule();
