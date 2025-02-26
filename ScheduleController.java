@@ -14,8 +14,9 @@ public class ScheduleController {
         Scanner scn = new Scanner(System.in);
         System.out.println("Welcome to Dal Scheduler!");
         System.out.println("Type 1 to create a new schedule");
-        System.out.println("Type 2 to print the schedule and 0 to end");
-        System.out.println("Type 3 to add classes to schedule");
+        System.out.println("Type 2 to add classes to schedule");
+        System.out.println("Type 3 to print the schedule");
+        System.out.println("Type 0 to end");
         cmd = scn.nextLine();
 
         Schedule schedule = new Schedule();
@@ -25,12 +26,12 @@ public class ScheduleController {
                schedule = new Schedule();
                System.out.println("Schedule created! Enter a new Command!");
                cmd = scn.nextLine();
-           } else if (cmd.equals("2")){
+           } else if (cmd.equals("3")){
                 schedule.printSched();
                 System.out.println("Enter a new Command!");
                 cmd = scn.nextLine();
             } else if (
-                    cmd.equals("3")){schedule.addSlots();
+                    cmd.equals("2")){schedule.addSlots();
                     System.out.println("Enter a new Command!");
                     cmd = scn.nextLine();
             }
