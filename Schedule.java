@@ -15,11 +15,13 @@ public class Schedule {
 
     public void addSlots(){
         Scanner scn = new Scanner(System.in);
+        String day = "";
         System.out.println("How many Timeslots do you want to add?");
         int slots = scn.nextInt();
+        scn.nextLine();
         for (int a = 0; a < slots; a++ ){
-            System.out.println("What day do you want to add the slot too? (Monday, Tuesday, Wednesday, etc...)");
-            String day = scn.nextLine();
+            System.out.println("What day do you want to add a slot to? (Monday, Tuesday, Wednesday, etc...)");
+            day = scn.nextLine();
             System.out.println("");
             switch (day) {
                 case "Monday":
@@ -65,7 +67,7 @@ public class Schedule {
 
     //print the schedule for viewing
     public void printSched(){
-        System.out.printf("%-15s %-10s %-10s %-10s%n","Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
+        System.out.printf("%-20s %-20s %-20s %-20s %-20s%n","Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
 
 
     }
