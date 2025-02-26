@@ -65,7 +65,7 @@ public class Schedule {
 
     //print the schedule for viewing
     public void printSched(){
-        //System.out.printf("%-15s %-10s %-10s %-10s%n","Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
+        System.out.printf("%-15s %-10s %-10s %-10s%n","Monday", "Tuesday", "Wednesday", "Thursday", "Friday");
 
 
     }

@@ -20,9 +20,20 @@ public class ScheduleController {
         Schedule schedule = new Schedule();
 
         while (!cmd.equals("0")) {
-           if (cmd.equals("1")){schedule = new Schedule();}
-            if (cmd.equals("2")){schedule.printSched();}
-            if (cmd.equals("3")){schedule.addSlots();}
+           if (cmd.equals("1")){
+               schedule = new Schedule();
+               System.out.println("Schedule created! Enter a new Command!");
+               cmd = scn.nextLine();
+           } else if (cmd.equals("2")){
+                schedule.printSched();
+                System.out.println("Enter a new Command!");
+                cmd = scn.nextLine();
+            } else if (
+                    cmd.equals("3")){schedule.addSlots();
+                    System.out.println("Enter a new Command!");
+                    cmd = scn.nextLine();
+            }
+            //if cmd is 0, stop controlling
             }
 
 
